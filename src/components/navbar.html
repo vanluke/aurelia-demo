@@ -1,0 +1,24 @@
+ <template>
+	 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+	    <header class="custom-header mdl-layout__header mdl-layout__header--waterfall">
+	     <div class="mdl-layout__header-row">
+	    <div class="ham-menu-top"><section click.delegate="toggle()" class="material-design-hamburger">
+		   <button class="material-design-hamburger__icon">
+		      <span class="material-design-hamburger__layer ${isOpen ? 'material-design-hamburger__icon--to-arrow' : 'material-design-hamburger__icon--from-arrow'}"></span>
+		   </button>
+		</section>
+		</div>
+	        <div class="mdl-layout-spacer"></div>
+		        <nav repeat.for="route of router.navigation" class="mdl-navigation mdl-layout--large-screen-only" >
+		             <a  href.bind="route.href" class="mdl-navigation__link ${route.isActive ? 'active' : ''}">${route.title}</a>
+		        </nav>
+	        </div>
+	        <span class="mdl-layout-title">${router.title}</span>
+	    </header>
+	</div>
+	<section class="wrapper">
+		<section class="menu ${isOpen ? 'menu--on': 'menu--off'}">
+			<div repeat.for="route of router.navigation"><a class="md--menu" href.bind="route.href">${route.title}</a></div>
+		</section>
+	</section>
+</template>

@@ -1,0 +1,10 @@
+<template>
+<require from="./article-content"></require>
+	<a class="resource__link" click.delegate="toggle()">
+			<img src.bind="article.picture"/>
+			 <h1 class="resource__title">${article.about}</h1>
+			<!--  <p class="resource__summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur magni aut veniam ullam sunt magnam repellat dolor praesentium, aliquid, veritatis, ipsa consectetur maiores?</p> -->
+			 <p class="resource--article__author"><span>By: </span>${article.author}</p>
+	</a>
+	<article-content visibility.bind="articleClicked" article.bind="article"></article-content>
+</template>

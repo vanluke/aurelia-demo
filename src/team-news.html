@@ -1,0 +1,14 @@
+<template>
+	<require from="./components/news-article"></require>
+	<require from="./components/article-content"></require>
+	<div>
+		 <section class="articles">
+		 	 <h2 class="section__title">News</h2>
+		 	 <ul class="resources">
+		 		 <li repeat.for="article of news" class="resource--article">
+		 		 	<news-article click.delegate="select(article)" article.bind="article"></news-article>
+		 		 </li>
+		 	 <ul>
+		 </section>
+	</div>
+</template>
